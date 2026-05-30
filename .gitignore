@@ -1,0 +1,11 @@
+# Local dev / editor
+.claude/
+.vercel/
+node_modules/
+
+# Backups
+Thanawat_Panley_Resume_backup_2page.pdf
+
+# OS
+Thumbs.db
+.DS_Store

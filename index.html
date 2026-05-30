@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume - ธนวัฒน์ ปานเล่ห์ | IIoT Engineer & Web Developer">
+    <title>ธนวัฒน์ ปานเล่ห์ — Resume</title>
+    <script>
+        // Apply saved/system theme before paint to avoid flash
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (t === 'light' || (!t && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">TP<span class="accent-dot">.</span></a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link" data-section="about">เกี่ยวกับ</a>
+                    <a href="#experience" class="nav-link" data-section="experience">ประสบการณ์</a>
+                    <a href="#education" class="nav-link" data-section="education">การศึกษา</a>
+                    <a href="#skills" class="nav-link" data-section="skills">ทักษะ</a>
+                    <a href="#certificates" class="nav-link" data-section="certificates">ใบรับรอง</a>
+                    <a href="#contact" class="nav-link" data-section="contact">ติดต่อ</a>
+                    <a href="Thanawat_Panley_Resume.pdf" download="Thanawat_Panley_Resume.pdf" class="nav-link" style="color: var(--accent-light); font-weight: 600;">ดาวน์โหลด PDF</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="สลับโหมดสว่าง/มืด">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">เกี่ยวกับ</a>
+        <a href="#experience" class="mobile-link">ประสบการณ์</a>
+        <a href="#education" class="mobile-link">การศึกษา</a>
+        <a href="#skills" class="mobile-link">ทักษะ</a>
+        <a href="#certificates" class="mobile-link">ใบรับรอง</a>
+        <a href="#contact" class="mobile-link">ติดต่อ</a>
+        <a href="Thanawat_Panley_Resume.pdf" download="Thanawat_Panley_Resume.pdf" class="mobile-link" style="color: var(--accent-light); font-weight: 600;">ดาวน์โหลด PDF</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge animate-in">
+                    <span class="status-dot"></span>
+                    พร้อมรับโอกาสใหม่
+                </div>
+                <h1 class="hero-name animate-in delay-1">
+                    <span class="hero-name-th">ธนวัฒน์</span>
+                    <span class="hero-name-th">ปานเล่ห์</span>
+                </h1>
+                <p class="hero-title animate-in delay-2">IIoT Engineer <span class="title-divider">&</span> Web App Developer</p>
+                <p class="hero-subtitle animate-in delay-3">
+                    ออกแบบและพัฒนาเว็บแอปพลิเคชัน ด้วยประสบการณ์ด้าน IT, การขาย และเทคนิคคอมพิวเตอร์
+                </p>
+                <div class="hero-actions animate-in delay-4">
+                    <a href="#contact" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        ติดต่อผม
+                    </a>
+                    <a href="Thanawat_Panley_Resume.pdf" download="Thanawat_Panley_Resume.pdf" class="btn btn-ghost">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        ดาวน์โหลด PDF (A4)
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-in delay-2">
+                <div class="hero-avatar">
+                    <div class="avatar-ring"></div>
+                    <img src="profile.jpg" alt="ธนวัฒน์ ปานเล่ห์" class="avatar-photo">
+                    <div class="avatar-orbit">
+                        <div class="orbit-dot" style="--i:0"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span></div>
+                        <div class="orbit-dot" style="--i:1"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span></div>
+                        <div class="orbit-dot" style="--i:2"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span></div>
+                        <div class="orbit-dot" style="--i:3"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span></div>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">ปีประสบการณ์</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-target="4">0</span>
+                        <span class="stat-label">บริษัทที่ร่วมงาน</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-in delay-5">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>เลื่อนลง</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">เกี่ยวกับฉัน</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="about-lead">
+                        สวัสดีครับ ผมธนวัฒน์ ปานเล่ห์ ปัจจุบันทำงานเป็น <strong>IIoT Engineer</strong> 
+                        ที่ บจก. วีทูเอส เอ็นจีเนียริ่ง รับผิดชอบออกแบบและพัฒนาเว็บแอปพลิเคชัน
+                    </p>
+                    <p>
+                        ด้วยพื้นฐานด้านเทคโนโลยีสารสนเทศจากมหาวิทยาลัยราชภัฏสงขลา 
+                        และประสบการณ์การทำงานที่หลากหลายทั้งด้านการขาย บริการ และเทคนิค 
+                        ทำให้ผมสามารถเข้าใจทั้งฝั่งผู้ใช้และฝั่งเทคนิคได้เป็นอย่างดี
+                    </p>
+                    <p>
+                        ผมเป็นคนใจเย็น สามารถทำงานภายใต้สภาวะกดดันได้ มีความรับผิดชอบ 
+                        และทำงานเป็นทีมได้ดี เข้ากับเพื่อนร่วมงานเพื่อให้ได้ผลงานที่ดีที่สุด
+                    </p>
+                </div>
+                <div class="about-info reveal">
+                    <div class="info-card">
+                        <div class="info-item">
+                            <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                            <div>
+                                <span class="info-label">วันเกิด</span>
+                                <span class="info-value">26 สิงหาคม 2539</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                            <div>
+                                <span class="info-label">ที่อยู่</span>
+                                <span class="info-value">อ.เมือง จ.สงขลา 90000</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                            <div>
+                                <span class="info-label">ภาษา</span>
+                                <span class="info-value">ไทย (ดีเยี่ยม) · English (ปานกลาง)</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+                            <div>
+                                <span class="info-label">งานอดิเรก</span>
+                                <span class="info-value">ท่องเที่ยว · เลี้ยงแมว</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="strengths-card">
+                        <h3 class="strengths-title">จุดเด่น</h3>
+                        <div class="strength-tags">
+                            <span class="tag">ใจเย็น</span>
+                            <span class="tag">รับผิดชอบ</span>
+                            <span class="tag">ทำงานเป็นทีม</span>
+                            <span class="tag">ละเอียด</span>
+                            <span class="tag">ทำงานภายใต้แรงกดดัน</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">ประสบการณ์ทำงาน</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <!-- V2S Engineering -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker current">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-badge current-badge">ปัจจุบัน</span>
+                                <h3 class="timeline-title">IIoT Engineer</h3>
+                                <p class="timeline-company">บจก. วีทูเอส เอ็นจีเนียริ่ง (V2S Engineering)</p>
+                            </div>
+                            <span class="timeline-date">ก.พ. 2568 — ปัจจุบัน</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>ออกแบบและพัฒนาเว็บแอปพลิเคชัน</li>
+                            <li>ทำงานด้าน Industrial Internet of Things (IIoT)</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Web App Design</span>
+                            <span>IIoT</span>
+                            <span>Frontend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JIB -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">พนักงานขาย / ช่างเทคนิค</h3>
+                                <p class="timeline-company">บริษัท เจ.ไอ.บี. คอมพิวเตอร์ กรุ๊ป จำกัด (JIB)</p>
+                            </div>
+                            <span class="timeline-date">2564 — 2568</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>แนะนำสินค้าโปรโมชั่นและผลิตภัณฑ์สินค้าไอที</li>
+                            <li>บริการแนะนำข้อมูลอื่น ๆ ตามที่ลูกค้าสอบถาม</li>
+                            <li>รับชำระเงินค่าสินค้า</li>
+                            <li>จัดเรียงสินค้าในร้าน และเช็คสต็อคสินค้า</li>
+                            <li>แก้ไขปัญหาทางเทคนิคคอมพิวเตอร์</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>IT Sales</span>
+                            <span>Technical Support</span>
+                            <span>Customer Service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strom Technology -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="timeline-badge intern-badge">ฝึกงาน</span>
+                                <h3 class="timeline-title">Website Designer</h3>
+                                <p class="timeline-company">บริษัทสตรอมเทคโนโลยี</p>
+                            </div>
+                            <span class="timeline-date">2562</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>ออกแบบเว็บไซต์ บ้านขายดี.com</li>
+                            <li>พัฒนาทั้ง Front-end และ Back-end</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Web Design</span>
+                            <span>Frontend</span>
+                            <span>Backend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swensen's -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">พนักงานแต่งไอศครีม</h3>
+                                <p class="timeline-company">Swensen's (โลตัสสงขลา)</p>
+                            </div>
+                            <span class="timeline-date">2559 — 2561</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>ตักแต่งไอศครีม</li>
+                            <li>รับชำระเงินค่าสินค้า</li>
+                            <li>แนะนำโปรโมชั่น</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Service</span>
+                            <span>Cashier</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">การศึกษา</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card reveal">
+                    <div class="edu-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                    <div class="edu-info">
+                        <span class="edu-year">2559 — 2564</span>
+                        <h3 class="edu-school">มหาวิทยาลัยราชภัฏสงขลา</h3>
+                        <p class="edu-degree">ปริญญาตรี</p>
+                        <p class="edu-faculty">คณะวิทยาศาสตร์และเทคโนโลยี</p>
+                    </div>
+                </div>
+                <div class="edu-card reveal">
+                    <div class="edu-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9.01"/><line x1="9" y1="12" x2="9" y2="12.01"/><line x1="9" y1="15" x2="9" y2="15.01"/><line x1="9" y1="18" x2="9" y2="18.01"/></svg></div>
+                    <div class="edu-info">
+                        <span class="edu-year">2557 — 2559</span>
+                        <h3 class="edu-school">โรงเรียนสตูลวิทยา</h3>
+                        <p class="edu-degree">มัธยมศึกษาตอนปลาย</p>
+                        <p class="edu-faculty">สาย ศิลป์ - คำนวณ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-dark" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">ทักษะ</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML / CSS</span>
+                                <span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span class="skill-pct">70%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Frontend Development</span>
+                                <span class="skill-pct">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Backend Development</span>
+                                <span class="skill-pct">60%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+                        <h3>Technical</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Computer Hardware</span>
+                                <span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>IT Troubleshooting</span>
+                                <span class="skill-pct">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>IIoT Systems</span>
+                                <span class="skill-pct">65%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Web App Design</span>
+                                <span class="skill-pct">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="soft-skills">
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                            <span>ใจเย็น ทำงานภายใต้แรงกดดันได้</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                            <span>มีความรับผิดชอบสูง</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                            <span>ทำงานเป็นทีมได้ดี</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                            <span>ละเอียดรอบคอบ</span>
+                        </div>
+                        <div class="soft-skill">
+                            <div class="soft-skill-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+                            <span>การสื่อสาร / บริการลูกค้า</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="section" id="certificates">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2 class="section-title">ใบรับรอง / Certificates</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="cert-grid">
+                <!-- Main Certificate -->
+                <a href="CertificateSiemens_ThanawatPanley/26 คุณธนวัฒน์ ปานเล่ห์.pdf" target="_blank" class="cert-card cert-card-featured reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+                    <div class="cert-info">
+                        <span class="cert-badge featured-badge">ใบรับรองหลักสูตร</span>
+                        <h3 class="cert-name">Robotic Process Automation (RPA) for Daily Use with AI Agents</h3>
+                        <p class="cert-issuer">ยกระดับงานประจำวันสู่ระบบอัตโนมัติด้วย RPA และ AI Agents · Siemens</p>
+                    </div>
+                    <div class="cert-action">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    </div>
+                </a>
+
+                <!-- Learning Path -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Basics of Industrial Digitalization</h3>
+                        <p class="cert-issuer">Siemens — Learning Path</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Learning Path Basics of Industrial Digitalization/Confirmation1_1.pdf" target="_blank">Module 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Learning Path Basics of Industrial Digitalization/Confirmation1_2.pdf" target="_blank">Module 2</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Learning Path Basics of Industrial Digitalization/Confirmation1_3.pdf" target="_blank">Module 3</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Learning Path Basics of Industrial Digitalization/Confirmation1_4.pdf" target="_blank">Module 4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Siemens Automation Systems -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Siemens Automation Systems</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Siemens Automation Systems 2/Certificate - Siemens1.pdf" target="_blank">Certificate 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Siemens Automation Systems 2/Certificate - Siemens2.pdf" target="_blank">Certificate 2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Edge Basic -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Industrial Edge Basic</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Industrial Edge Basic3/Confirmation3_1.pdf" target="_blank">Module 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Industrial Edge Basic3/Confirmation3_2.pdf" target="_blank">Module 2</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Industrial Edge Basic3/Confirmation3_3.pdf" target="_blank">Module 3</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Industrial Edge Basic3/Confirmation3_4.pdf" target="_blank">Module 4</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine & Line Simulation -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Machine & Line Simulation Basic</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Machine & Line Simulation Basic4/Confirmation4_1.pdf" target="_blank">Module 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Machine & Line Simulation Basic4/Confirmation4_2.pdf" target="_blank">Module 2</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Machine & Line Simulation Basic4/Confirmation4_3.pdf" target="_blank">Module 3</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Machine & Line Simulation Basic4/Confirmation4_4.pdf" target="_blank">Module 4</a>
+                            <a href="CertificateSiemens_ThanawatPanley/Machine & Line Simulation Basic4/Confirmation4_5.pdf" target="_blank">Module 5</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Basic -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Cloud Basic</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Cloud Basic5/Confirmation5_1.pdf" target="_blank">Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IIoT Connectivity Basic -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">IIoT Connectivity Basic</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/IIoT Connectivity Basic6/Certificate - Siemens6_1.pdf" target="_blank">Certificate 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/IIoT Connectivity Basic6/Certificate - Siemens6_2.pdf" target="_blank">Certificate 2</a>
+                            <a href="CertificateSiemens_ThanawatPanley/IIoT Connectivity Basic6/Certificate - Siemens6_3.pdf" target="_blank">Certificate 3</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Cybersecurity -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Industrial Cybersecurity Basic</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/Industrial Cybersecurity Basic7/Confirmation7_1.pdf" target="_blank">Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CERT Tests -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">CERT Tests — Authorized System Integrators</h3>
+                        <p class="cert-issuer">Siemens</p>
+                        <div class="cert-files">
+                            <a href="CertificateSiemens_ThanawatPanley/CERT Tests - For active module members or Authorized System Integrators ONLY8/Confirmation8_1.pdf" target="_blank">Test 1</a>
+                            <a href="CertificateSiemens_ThanawatPanley/CERT Tests - For active module members or Authorized System Integrators ONLY8/Confirmation8_2.pdf" target="_blank">Test 2</a>
+                            <a href="CertificateSiemens_ThanawatPanley/CERT Tests - For active module members or Authorized System Integrators ONLY8/Confirmation8_3.pdf" target="_blank">Test 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">06</span>
+                <h2 class="section-title">ติดต่อ</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-intro reveal">
+                <h3 class="contact-headline">
+                    พร้อม<span class="contact-highlight">ปลดล็อกศักยภาพ</span>เต็มที่<br>ให้กับทีมของคุณ
+                </h3>
+                <p class="contact-lead">
+                    กำลังมองหาคนที่ใจเย็น รับผิดชอบ เรียนรู้ไว และพร้อมลุยทุกความท้าทายอยู่ใช่ไหมครับ?
+                    ทักมาคุยกันได้เลย — โอกาสงาน โปรเจกต์ หรือแค่อยากแลกเปลี่ยนไอเดีย ผมพร้อมตอบเสมอ
+                </p>
+                <a href="mailto:thanawat60081@gmail.com?subject=สนใจร่วมงานกับธนวัฒน์" class="btn btn-primary contact-cta">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    เริ่มต้นไปด้วยกัน
+                </a>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <span class="contact-label">อีเมล</span>
+                    <a href="mailto:thanawat60081@gmail.com" class="contact-value">thanawat60081@gmail.com</a>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <span class="contact-label">โทรศัพท์</span>
+                    <a href="tel:0967748172" class="contact-value">096-774-8172</a>
+                </div>
+                <div class="contact-card reveal">
+                    <div class="contact-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <span class="contact-label">ที่อยู่</span>
+                    <span class="contact-value">194/4 ถ.สงขลา-นาทวี ต.กุ้งหวัง<br>อ.เมือง สงขลา 90000</span>
+                </div>
+            </div>
+            <div class="contact-social reveal">
+                <a href="https://line.me/ti/p/UTVC4oBwcS" target="_blank" rel="noopener" class="social-btn" aria-label="LINE" title="เพิ่มเพื่อนทาง LINE">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.3C24 4.99 18.66.66 12 .66S0 4.99 0 10.3c0 4.76 4.24 8.76 9.96 9.52.39.08.92.26 1.05.6.12.3.08.78.04 1.09l-.17 1.02c-.05.3-.24 1.18 1.03.64s6.86-4.04 9.36-6.92h-.01c1.72-1.89 2.55-3.81 2.55-5.95zM7.77 13.4H5.4c-.35 0-.63-.28-.63-.63V8.05c0-.35.28-.63.63-.63s.63.28.63.63v4.09h1.74c.35 0 .63.28.63.63s-.28.63-.63.63zm2.46-.63c0 .35-.28.63-.63.63s-.63-.28-.63-.63V8.05c0-.35.28-.63.63-.63s.63.28.63.63v4.72zm5.69 0c0 .27-.17.51-.43.6-.07.02-.14.03-.2.03-.2 0-.39-.09-.51-.26l-2.42-3.29v2.92c0 .35-.28.63-.63.63s-.63-.28-.63-.63V8.05c0-.27.17-.51.43-.6.07-.02.13-.03.2-.03.2 0 .39.09.51.26l2.42 3.29V8.05c0-.35.28-.63.63-.63s.63.28.63.63v4.72zm3.85-2.99c.35 0 .63.28.63.63s-.28.63-.63.63h-1.74v1.11h1.74c.35 0 .63.28.63.63s-.28.63-.63.63h-2.37c-.35 0-.63-.28-.63-.63V8.05c0-.35.28-.63.63-.63h2.37c.35 0 .63.28.63.63s-.28.63-.63.63h-1.74v1.11h1.74z"/></svg>
+                </a>
+                <a href="https://github.com/Thanawat2539" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub" title="GitHub: Thanawat2539">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.2 3.44 9.6 8.21 11.16.6.11.82-.25.82-.56 0-.28-.01-1.02-.02-2-3.34.71-4.04-1.58-4.04-1.58-.55-1.37-1.33-1.74-1.33-1.74-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.57-2.67-.3-5.47-1.31-5.47-5.84 0-1.29.47-2.34 1.24-3.17-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.21a11.5 11.5 0 0 1 6 0c2.29-1.53 3.3-1.21 3.3-1.21.66 1.64.24 2.86.12 3.16.77.83 1.24 1.88 1.24 3.17 0 4.54-2.81 5.53-5.49 5.83.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .31.21.68.83.56A12.04 12.04 0 0 0 24 12.29C24 5.78 18.63.5 12 .5z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2568 ธนวัฒน์ ปานเล่ห์ · ออกแบบและพัฒนาด้วยตนเอง</p>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="กลับขึ้นบนสุด" title="กลับขึ้นบนสุด">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+
+    <script src="script.js?v=3"></script>
+</body>
+</html>
