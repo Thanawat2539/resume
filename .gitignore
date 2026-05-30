@@ -6,6 +6,12 @@ node_modules/
 # Backups
 Thanawat_Panley_Resume_backup_2page.pdf
 
+# Personal / non-website files
+3D_Printing_Business_Comparison.pdf
+Hybrid_3D_PhoneCase_BusinessModel.pdf
+make_pdf.py
+make_pdf2.py
+
 # OS
 Thumbs.db
 .DS_Store
